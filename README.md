@@ -21,7 +21,7 @@ Many qualified applicants are rejected by automated Applicant Tracking Systems (
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/adilsukumar/ATS_Resume-to-Job_Fit_Analyzer.git
+   git clone https://github.com/adilsukumar/ATS-Resume-Job-Fit-Analyzer.git
    cd ATS_Resume-to-Job_Fit_Analyzer
    ```
 
