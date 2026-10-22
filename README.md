@@ -4,11 +4,15 @@
 
 This is my course project for Fundamentals in Artificial Intelligence and Machine Learning: a local command-line tool that compares a resume with a job description using a custom NLP pipeline. It makes the mathematical comparison inspectable, from text extraction to the final report.
 
+<a id="what-it-does"></a>
+
 ## <img src="assets/readme/icon-file.svg" width="30" height="30" alt=""/> What it does
 
 <p><picture><source media="(max-width: 600px)" srcset="assets/readme/features-mobile.svg"/><img src="assets/readme/features.svg" width="100%" alt="Custom TF-IDF, cosine similarity, ranked missing keywords, PDF/text support and local processing."/></picture></p>
 
 The application extracts both documents, builds a shared vocabulary, computes TF-IDF vectors and prints a similarity percentage. It also lists up to ten job-description terms that pass the project’s importance cutoff and are absent from the resume vector.
+
+<a id="from-text-to-vectors"></a>
 
 ## <img src="assets/readme/icon-pipeline.svg" width="30" height="30" alt=""/> From text to vectors
 
@@ -30,6 +34,8 @@ The application extracts both documents, builds a shared vocabulary, computes TF
 These are implementation choices in this course project, not thresholds supplied by an employer or ATS vendor.
 
 </details>
+
+<a id="run-locally"></a>
 
 ## <img src="assets/readme/icon-terminal.svg" width="30" height="30" alt=""/> Run locally
 
@@ -61,6 +67,8 @@ python main.py --jd sample_jd.txt --resume sample_resume.txt
 
 Use `.txt` or text-extractable `.pdf` files with the same `--jd` and `--resume` arguments. The loader uses PyPDF2 for PDF text extraction; it does not include an OCR stage for scanned documents.
 
+<a id="test-the-mathematics"></a>
+
 ## <img src="assets/readme/icon-test.svg" width="30" height="30" alt=""/> Test the mathematics
 
 ```bash
@@ -69,6 +77,8 @@ python -m unittest test_model.py
 
 The existing tests cover a known cosine-similarity example, zero-vector handling and the TF-IDF extractor’s vector shape/non-zero output. The repository also contains [recorded test output](test_execution_proof.txt).
 
+<a id="scope-and-data-handling"></a>
+
 ## <img src="assets/readme/icon-local.svg" width="30" height="30" alt=""/> Scope and data handling
 
 <p><picture><source media="(max-width: 600px)" srcset="assets/readme/scope-mobile.svg"/><img src="assets/readme/scope.svg" width="100%" alt="Project-specific text similarity, literal tokenization limits and local diagnostic logs."/></picture></p>
@@ -76,6 +86,8 @@ The existing tests cover a known cosine-similarity example, zero-vector handling
 The score describes overlap under this implementation. It does not predict hiring outcomes or reproduce a commercial ATS. Alphabetic tokenization can discard numbers and punctuation-heavy skill names, and literal keyword overlap can miss meaning, synonyms and experience context.
 
 The current pipeline does not call an external model or upload service. It writes local diagnostic information to `app_debug.log`, including file paths, progress and errors. Keep private input documents and generated logs out of public commits.
+
+<a id="explore-the-code"></a>
 
 ## <img src="assets/readme/icon-docs.svg" width="30" height="30" alt=""/> Explore the code
 
